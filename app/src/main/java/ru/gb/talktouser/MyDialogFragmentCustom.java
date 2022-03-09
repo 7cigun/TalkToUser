@@ -23,6 +23,11 @@ public class MyDialogFragmentCustom extends DialogFragment {
                 .setView(view)
                 .show();
 
+        view.findViewById(R.id.buttonCustomView).setOnClickListener(v -> {
+            EditText editText = view.findViewById(R.id.editTextCustomView);
+            ( (MainActivity) getActivity()).onDialogResult(editText.getText().toString());
+            dismiss();
+        });
 
         return alertDialog;
     }
