@@ -36,6 +36,7 @@ public class MessagesFragment extends Fragment {
     void initView(View view) {
         view.findViewById(R.id.btnToast).setOnClickListener(view1 -> showToast());
         view.findViewById(R.id.btnSnackBar).setOnClickListener(view1 -> showSnackBar(view));
+        view.findViewById(R.id.btnSnackBarWithAction).setOnClickListener(view1 -> showSnackBarWithAction(view));
     }
 
     void showToast() {
@@ -43,6 +44,12 @@ public class MessagesFragment extends Fragment {
     }
 
     void showSnackBar(View view) {
-        Snackbar.make(view, "Отображение Toast", Snackbar.LENGTH_LONG).show();
+        Snackbar.make(view, "Отображение SnackBar", Snackbar.LENGTH_LONG).show();
+    }
+
+    void showSnackBarWithAction(View view) {
+        Snackbar.make(view, "Отображение SnackBarWithAction", Snackbar.LENGTH_LONG).setAction("Еще раз!", view1 -> {
+            showToast();
+        }).show();
     }
 }
