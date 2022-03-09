@@ -1,11 +1,18 @@
 package ru.gb.talktouser;
 
 import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
@@ -47,6 +54,7 @@ public class MessagesFragment extends Fragment {
         view.findViewById(R.id.btnDialogFragment).setOnClickListener(view1 -> showDialogFragment());
         view.findViewById(R.id.btnDialogFragmentCustom).setOnClickListener(view1 -> showDialogFragmentCustom());
         view.findViewById(R.id.btnBottomSheetDialogFragment).setOnClickListener(view1 -> showBottomSheetDialogFragment());
+        view.findViewById(R.id.btnPushNotification).setOnClickListener(view1 -> showPushNotification());
     }
 
     void showToast() {
@@ -110,5 +118,23 @@ public class MessagesFragment extends Fragment {
 
     void showBottomSheetDialogFragment() {
         new MyBottomSheetDialogFragment().show(getActivity().getSupportFragmentManager(), "SupportFM");
+    }
+
+    void showPushNotification() {
+        NotificationManager notificationManager = (NotificationManager) requireActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.O) {
+            NotificationChannel notificationChannel = new NotificationChannel("1", "CHANNEL1", NotificationManager.IMPORTANCE_HIGH);
+            notificationChannel.setDescription("Канал для Push-уведомлений");
+            notificationManager.createNotificationChannel(notificationChannel);
+        }
+
+        Notification notification = new NotificationCompat.Builder(requireContext(), "1")
+                .setContentTitle("Заголовок Push")
+                .setContentText("Текст Push")
+                .setPriority((Notification.PRIORITY_HIGH))
+                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .build();
+
+        notificationManager.notify(1, notification);
     }
 }

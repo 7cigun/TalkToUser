@@ -9,4 +9,6 @@
     <string name="show_toast">Show Toast</string>
     <string name="dialogfragment">Показать DialogFragment</string>
     <string name="dialogfragmentcustom">Показать dialogfragmentcustom</string>
+    <string name="bottomsheetdialogfragment">BottomSheetDialogFragment</string>
+    <string name="push">Push-уведомление</string>
 </resources>
