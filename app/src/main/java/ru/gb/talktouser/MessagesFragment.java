@@ -46,6 +46,7 @@ public class MessagesFragment extends Fragment {
         view.findViewById(R.id.btnAlertDialogCustom).setOnClickListener(view1 -> showAlertDialogCustom());
         view.findViewById(R.id.btnDialogFragment).setOnClickListener(view1 -> showDialogFragment());
         view.findViewById(R.id.btnDialogFragmentCustom).setOnClickListener(view1 -> showDialogFragmentCustom());
+        view.findViewById(R.id.btnBottomSheetDialogFragment).setOnClickListener(view1 -> showBottomSheetDialogFragment());
     }
 
     void showToast() {
@@ -105,5 +106,9 @@ public class MessagesFragment extends Fragment {
 
     void showDialogFragmentCustom() {
         new MyDialogFragmentCustom().show(getActivity().getSupportFragmentManager(), "SupportFM");
+    }
+
+    void showBottomSheetDialogFragment() {
+        new MyBottomSheetDialogFragment().show(getActivity().getSupportFragmentManager(), "SupportFM");
     }
 }
