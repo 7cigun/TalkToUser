@@ -26,14 +26,26 @@
        android:layout_height="wrap_content"/>
 
    <com.google.android.material.button.MaterialButton
-       android:id="@+id/AlertDialog"
+       android:id="@+id/btnAlertDialog"
        android:text="@string/alertdialog"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"/>
 
    <com.google.android.material.button.MaterialButton
-       android:id="@+id/AlertDialogCustom"
+       android:id="@+id/btnAlertDialogCustom"
        android:text="@string/alertdialogcustom"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
+
+   <com.google.android.material.button.MaterialButton
+       android:id="@+id/btnDialogFragment"
+       android:text="@string/dialogfragment"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
+
+   <com.google.android.material.button.MaterialButton
+       android:id="@+id/btnDialogFragmentCustom"
+       android:text="@string/dialogfragmentcustom"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"/>
 

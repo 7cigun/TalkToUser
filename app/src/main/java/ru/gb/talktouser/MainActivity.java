@@ -3,8 +3,13 @@ package ru.gb.talktouser;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    public void onDialogResult(String message){
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

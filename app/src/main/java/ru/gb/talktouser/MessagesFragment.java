@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -41,8 +42,10 @@ public class MessagesFragment extends Fragment {
         view.findViewById(R.id.btnToast).setOnClickListener(view1 -> showToast());
         view.findViewById(R.id.btnSnackBar).setOnClickListener(view1 -> showSnackBar(view));
         view.findViewById(R.id.btnSnackBarWithAction).setOnClickListener(view1 -> showSnackBarWithAction(view));
-        view.findViewById(R.id.AlertDialog).setOnClickListener(view1 -> showAlertDialog());
-        view.findViewById(R.id.AlertDialogCustom).setOnClickListener(view1 -> showAlertDialogCustom());
+        view.findViewById(R.id.btnAlertDialog).setOnClickListener(view1 -> showAlertDialog());
+        view.findViewById(R.id.btnAlertDialogCustom).setOnClickListener(view1 -> showAlertDialogCustom());
+        view.findViewById(R.id.btnDialogFragment).setOnClickListener(view1 -> showDialogFragment());
+        view.findViewById(R.id.btnDialogFragmentCustom).setOnClickListener(view1 -> showDialogFragmentCustom());
     }
 
     void showToast() {
@@ -94,5 +97,13 @@ public class MessagesFragment extends Fragment {
             showToast(editText.getText().toString());
             alertDialog.dismiss();
         });
+    }
+
+    void showDialogFragment() {
+        new MyDialogFragment().show(getActivity().getSupportFragmentManager(), "SupportFM");
+    }
+
+    void showDialogFragmentCustom() {
+        new MyDialogFragmentCustom().show(getActivity().getSupportFragmentManager(), "SupportFM");
     }
 }

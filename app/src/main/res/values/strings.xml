@@ -7,4 +7,6 @@
     <string name="alertdialog">Показать AlertDialog</string>
     <string name="alertdialogcustom">Показать свой AlertDialog</string>
     <string name="show_toast">Show Toast</string>
+    <string name="dialogfragment">Показать DialogFragment</string>
+    <string name="dialogfragmentcustom">Показать dialogfragmentcustom</string>
 </resources>
