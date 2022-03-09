@@ -4,4 +4,7 @@
     <string name="toast">Пожарить Toast</string>
     <string name="snackbar">Закусить SnackBar</string>
     <string name="snackbar_action">SnackBar с действием</string>
+    <string name="alertdialog">Показать AlertDialog</string>
+    <string name="alertdialogcustom">Показать свой AlertDialog</string>
+    <string name="show_toast">Show Toast</string>
 </resources>

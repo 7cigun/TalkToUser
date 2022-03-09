@@ -18,9 +18,22 @@
        android:text="@string/snackbar"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"/>
+
    <com.google.android.material.button.MaterialButton
        android:id="@+id/btnSnackBarWithAction"
        android:text="@string/snackbar_action"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
+
+   <com.google.android.material.button.MaterialButton
+       android:id="@+id/AlertDialog"
+       android:text="@string/alertdialog"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
+
+   <com.google.android.material.button.MaterialButton
+       android:id="@+id/AlertDialogCustom"
+       android:text="@string/alertdialogcustom"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"/>
 
