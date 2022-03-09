@@ -24,10 +24,10 @@ public class MyBottomSheetDialogFragment extends BottomSheetDialogFragment {
         initView(view);
     }
 
-    void initView(View view){
+    void initView(View view) {
         view.findViewById(R.id.buttonCustomView).setOnClickListener(v -> {
             EditText editText = view.findViewById(R.id.editTextCustomView);
-            ( (MainActivity) getActivity()).onDialogResult(editText.getText().toString());
+            ((MainActivity) getActivity()).onDialogResult(editText.getText().toString());
             dismiss();
         });
     }

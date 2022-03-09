@@ -24,7 +24,6 @@ public class MyDialogFragmentCustom extends DialogFragment {
                 .show();
 
 
-
         return alertDialog;
     }
 
